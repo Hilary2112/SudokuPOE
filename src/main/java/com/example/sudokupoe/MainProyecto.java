@@ -1,5 +1,6 @@
 package com.example.sudokupoe;
 
+import com.example.sudokupoe.Views.StartView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,11 +11,7 @@ import java.io.IOException;
 public class MainProyecto extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainProyecto.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setResizable(false);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+        StartView startView = StartView.getInstance();
+        startView.show();
     }
 }
