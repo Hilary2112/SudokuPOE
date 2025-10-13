@@ -2,6 +2,7 @@ module com.example.sudokupoe {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires java.desktop;
 
     opens com.example.sudokupoe to javafx.fxml;
     opens com.example.sudokupoe.Controllers to javafx.fxml;
