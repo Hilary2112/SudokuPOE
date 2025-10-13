@@ -1,16 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.sudokupoe.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="605.0" style="-fx-border-color: black; -fx-border-width: 3; -fx-background-color: #eae1f7;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudokupoe.Controllers.StartController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="0.0" prefWidth="9.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="560.0" minWidth="10.0" prefWidth="560.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="123.0" minWidth="8.0" prefWidth="13.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="203.0" minHeight="2.0" prefHeight="2.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="203.0" minHeight="10.0" prefHeight="135.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="516.0" minHeight="10.0" prefHeight="430.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER" prefHeight="135.0" prefWidth="566.0" text="¡BIENVENIDO AL &#10;SUDOKU 6X6!" textAlignment="CENTER" textFill="#3c0557" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="DejaVu Sans Condensed Bold" size="44.0" />
+         </font>
+      </Label>
+      <GridPane prefHeight="479.0" prefWidth="515.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="395.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="221.0" minWidth="10.0" prefWidth="120.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane prefHeight="489.0" prefWidth="376.0" style="-fx-border-color: BLACK; -fx-border-width: 2; -fx-border-radius: 7;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="130.0" minHeight="7.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="433.0" minHeight="10.0" prefHeight="433.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <GridPane prefHeight="70.0" prefWidth="335.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="404.0" style="-fx-border-color: BLACK; -fx-border-width: 2; -fx-background-color: #d6bbfc;" text="INSTRUCCIONES">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane prefHeight="433.0" prefWidth="378.0" style="-fx-border-width: 3; -fx-border-color: BLACK; -fx-background-color: WHITE;" GridPane.rowIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="409.0" prefWidth="396.0" text=" 1. Tendras que llena la cuadrícula de con los&#10; números del 1 al 6, asegurándote de que &#10; cada número no se repita en ninguna fila,&#10; columna ni en las seis cajas de 2x3 que &#10; dividen la cuadrícula.&#10;&#10; 2. En caso de error, el cuadro cambiara de&#10; color y tendras que eliminar tu numero y&#10; pensar en otra posibilidad.&#10;&#10; 3. Si necesitas ayuda tendras un boton de&#10; &quot;PISTA&quot;, al presionarlo un numero en la&#10; posicion correcta revela.&#10;&#10; 4. Si quieres un nuevo juego tendras un&#10; boton que te da la posibilidad de generar&#10; un tablero nuevo.&#10;&#10; 5. Presiona &quot;JUGAR&quot; para empezar el juego." textFill="#24190f">
+                           <font>
+                              <Font name="DejaVu Sans" size="15.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets bottom="4.0" left="4.0" right="4.0" />
+                           </opaqueInsets>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets top="4.0" />
+                     </opaqueInsets>
+                  </GridPane>
+               </children>
+            </GridPane>
+            <ImageView fitHeight="662.0" fitWidth="811.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@Images/gato_asomandose-hello.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="0.0" prefWidth="0.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="539.0" minWidth="10.0" prefWidth="384.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="0.0" prefWidth="176.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="28.0" minHeight="7.0" prefHeight="9.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="JugarBoton" mnemonicParsing="false" onAction="#OnActionBotonInicioJuego" prefHeight="63.0" prefWidth="147.0" style="-fx-background-color: #d6bbfc; -fx-border-color: BLACK; -fx-border-width: 3; -fx-border-radius: 40; -fx-background-radius: 40;" text="JUGAR" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="DejaVu Sans Mono Bold" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</GridPane>
