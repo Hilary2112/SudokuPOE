@@ -1,3 +1,5 @@
 package com.example.sudokupoe.Models;
 
-public class ValidadorSudokuModelo { }
+public class ValidadorSudokuModelo {
+    //hhhh
+ }
