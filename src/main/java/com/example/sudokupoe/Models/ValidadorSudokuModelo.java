@@ -13,7 +13,7 @@ public class ValidadorSudokuModelo {
         if (!verificarNumeroEnColumna(tablero, columna, numero)){
             return false;
         }
-        if (!VerificarNumeroEnBloque(tablero,fila,columna,numero)){
+        if (!verificarNumeroEnBloque(tablero,fila,columna,numero)){
             return false;
         }
         return true;
@@ -34,6 +34,20 @@ public class ValidadorSudokuModelo {
         for (int i = 0; i < matrizTamano; i++) {
             if (tablero[i][columna] == numero) {
                 return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean verificarNumeroEnBloque(int[][] tablero, int fila, int columna, int numero){
+        int inicioDeFila = (fila/altoPorBloque)*altoPorBloque;
+        int inicioDeColumna = (columna/anchoPorBloque)*anchoPorBloque;
+
+        for (int i = inicioDeFila; i < inicioDeFila + altoPorBloque; i++){
+            for(int j = inicioDeColumna; j < inicioDeColumna + anchoPorBloque; j++){
+                if (tablero[i][j] == numero){
+                    return false;
+                }
             }
         }
         return true;
