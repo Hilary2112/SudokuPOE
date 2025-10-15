@@ -65,32 +65,32 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda00" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda10" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda01" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda11" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda02" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda12" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
@@ -108,32 +108,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda03" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda13" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda04" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda14" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda05" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda15" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
@@ -151,32 +151,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda20" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda30" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda21" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda31" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda22" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda32" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
@@ -194,32 +194,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda23" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda33" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda24" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda34" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda25" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda35" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
@@ -237,32 +237,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda40" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda50" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda41" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda51" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda42" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda52" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
@@ -280,32 +280,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
+                  <TextField fx:id="celda43" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
+                  <TextField fx:id="celda53" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
+                  <TextField fx:id="celda44" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="celda54" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
+                  <TextField fx:id="celda45" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </TextField>
-                  <TextField alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="celda55" alignment="CENTER" prefHeight="76.0" prefWidth="74.0" style="-fx-border-width: 1; -fx-border-color: 1;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font name="System Bold" size="25.0" />
                      </font>
