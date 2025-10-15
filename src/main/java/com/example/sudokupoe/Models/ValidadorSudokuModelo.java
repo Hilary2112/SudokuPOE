@@ -18,4 +18,24 @@ public class ValidadorSudokuModelo {
         }
         return true;
     }
+
+    private boolean verificarNumeroEnFila(int[][] tablero, int fila, int numero) {
+        for (int j = 0; j < matrizTamano; j++) {
+            if (tablero[fila][j] == numero) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    private boolean verificarNumeroEnColumna(int[][] tablero, int columna, int numero) {
+
+        for (int i = 0; i < matrizTamano; i++) {
+            if (tablero[i][columna] == numero) {
+                return false;
+            }
+        }
+        return true;
+    }
  }
