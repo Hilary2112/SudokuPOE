@@ -9,7 +9,8 @@ public class MouseHandler extends  MouseAdapter{
     @Override
     public void clickEnTextField(MouseEvent eventoMouse, TextField celda) {
         String estiloOriginal = celda.getStyle();
-        celda.setStyle("-fx-background-color: #E6E6FA; -fx-border-color: PURPLE; -fx-border-width: 2;");        celda.requestFocus();
+
+        celda.setStyle("-fx-background-color: #E6E6FA; -fx-border-color: PURPLE; -fx-border-width: 2;");
 
         PauseTransition pausa = new PauseTransition(Duration.millis(1000));
 
@@ -21,6 +22,4 @@ public class MouseHandler extends  MouseAdapter{
 
         celda.requestFocus();
     }
-
 }
-
