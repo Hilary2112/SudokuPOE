@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+/**
+ * Genera tableros de Sudoku 6x6 completos y sus soluciones.
+ * Utiliza backtracking para crear tableros válidos y oculta celdas para el juego.
+ * Mantiene la solución completa para proporcionar pistas precisas.
+ *
+ * @author Hilary Herrera, Manuel Lopez Sanchez
+ */
 public class GeneradorSudokuModelo {
     private static final int matrizTamano = 6;
     private static final int altoPorBloque = 2;
@@ -13,6 +20,9 @@ public class GeneradorSudokuModelo {
     private boolean[][] celdasIniciales;
     private int[][] solucionCompleta; // Guarda la solución completa
 
+    /**
+     * Constructor que inicializa el generador con sus dependencias.
+     */
     public GeneradorSudokuModelo(){
         random = new Random();
         validadorSudokuModelo = new ValidadorSudokuModelo();
@@ -20,6 +30,11 @@ public class GeneradorSudokuModelo {
         solucionCompleta = new int[matrizTamano][matrizTamano];
     }
 
+    /**
+     * Genera un nuevo tablero de Sudoku con solución única.
+     *
+     * @return Matriz 6x6 con el tablero generado (algunas celdas vacías)
+     */
     public int[][] generarTablero(){
         int[][] tableroCompleto = new int[matrizTamano][matrizTamano];
         reiniciarCeldasIniciales();
@@ -36,6 +51,12 @@ public class GeneradorSudokuModelo {
         return ocultarCeldasDeTableroCompletado(tableroCompleto);
     }
 
+    /**
+     * Llena el tablero usando backtracking recursivo.
+     *
+     * @param tablero Tablero a llenar
+     * @return true si se pudo completar el tablero, false en caso contrario
+     */
     private boolean llenarTablero(int[][] tablero){
         for(int fila = 0; fila < matrizTamano; fila++){
             for(int columna = 0; columna < matrizTamano; columna++){
@@ -60,6 +81,13 @@ public class GeneradorSudokuModelo {
         return true;
     }
 
+    /**
+     * Oculta celda del tablero completo para crear el juego.
+     * Mantiene 2 celdas visibles por cada bloque 2x3.
+     *
+     * @param tableroCompleto Tablero completamente resuelto
+     * @return Tablero con celdas ocultas para jugar
+     */
     private int[][] ocultarCeldasDeTableroCompletado(int[][] tableroCompleto) {
         int[][] celdaAOcultar = new int[matrizTamano][matrizTamano];
 
@@ -95,6 +123,11 @@ public class GeneradorSudokuModelo {
         return celdaAOcultar;
     }
 
+    /**
+     * Genera un arreglo de números del 1 al 6 en orden aleatorio.
+     *
+     * @return Arreglo de números mezclados aleatoriamente
+     */
     private int[] generarNumerosAleatorios(){
         int[] numeros = {1, 2, 3, 4, 5, 6};
 
@@ -109,10 +142,20 @@ public class GeneradorSudokuModelo {
         return numeros;
     }
 
+    /**
+     * Verifica si una celda es inicial (no editable).
+     *
+     * @param fila Fila de la celda
+     * @param columna Columna de la celda
+     * @return true si la celda es inicial, false si es editable
+     */
     public boolean esCeldaInicial(int fila, int columna){
         return celdasIniciales[fila][columna];
     }
 
+    /**
+     * Reinicia el registro de celdas iniciales.
+     */
     private void reiniciarCeldasIniciales(){
         for(int i = 0; i < matrizTamano; i++){
             for(int j = 0; j < matrizTamano; j++){
@@ -121,10 +164,22 @@ public class GeneradorSudokuModelo {
         }
     }
 
+    /**
+     * Inicia un nuevo juego configurando el tablero del modelo.
+     *
+     * @param tableroModelo Modelo del tablero a inicializar
+     */
+
     public void iniciarNuevoJuego(TableroSudokuModelo tableroModelo){
         tableroModelo.setTablero(generarTablero());
     }
 
+    /**
+     * Obtiene una pista desde la solución completa guardada.
+     *
+     * @param tableroActual Tablero actual del juego
+     * @return Arreglo [fila, columna, número] con la pista, o null si no hay
+     */
     public int[] obtenerPistaDesdeSolucion(int[][] tableroActual) {
         for (int fila = 0; fila < matrizTamano; fila++) {
             for (int columna = 0; columna < matrizTamano; columna++) {
