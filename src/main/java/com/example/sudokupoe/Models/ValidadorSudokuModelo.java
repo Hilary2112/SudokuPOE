@@ -5,6 +5,11 @@ public class ValidadorSudokuModelo {
     private static final int matrizTamano= 6;
     private static final int altoPorBloque = 2;
     private static final int anchoPorBloque = 3;
+    private boolean[][] errores;
+
+    public ValidadorSudokuModelo(){
+        errores = new boolean[matrizTamano][matrizTamano];
+    }
 
     public boolean verficarSiElMovimientoEsValido(int[][] tablero,int fila, int columna, int numero){
         if (!verificarNumeroEnFila(tablero,fila,numero)) {
@@ -52,4 +57,69 @@ public class ValidadorSudokuModelo {
         }
         return true;
     }
- }
+
+    public boolean tableroCompletamenteValido(int[][] tablero) {
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                int numero = tablero[fila][columna];
+                if (numero != 0) {
+                    tablero[fila][columna] = 0;
+                    boolean valido = verficarSiElMovimientoEsValido(tablero, fila, columna, numero);
+                    tablero[fila][columna] = numero;
+                    if (!valido) return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    private void limpiarErrores(){
+        for(int i = 0; i < matrizTamano; i++){
+            for(int j = 0; j < matrizTamano; j++){
+                errores[i][j] = false;
+            }
+        }
+    }
+
+    public boolean tieneError(int fila, int columna) {
+        return errores[fila][columna];
+    }
+
+    public boolean esJuegoCompletado(int[][] tablero) {
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                if (tablero[fila][columna] == 0) {
+                    return false;
+                }
+            }
+        }
+        return tableroCompletamenteValido(tablero);
+    }
+
+    public void validarYMarcarErrores(int[][] tablero) {
+        limpiarErrores();
+
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                int numero = tablero[fila][columna];
+                if (numero != 0) {
+                    tablero[fila][columna] = 0;
+                    boolean valido = verficarSiElMovimientoEsValido(tablero, fila, columna, numero);
+                    tablero[fila][columna] = numero;
+
+                    if (!valido) {
+                        errores[fila][columna] = true;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+}
