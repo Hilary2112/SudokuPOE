@@ -17,24 +17,30 @@ public class SudokuController {
     private MouseHandler mouseHandler;
 
     @FXML
-    private Button BotonNuevoJuego,BotonPista,BotonVerificar;
+    private Button BotonNuevoJuego, BotonPista, BotonVerificar;
 
     @FXML
     private GridPane GridpanePadre;
 
     private TextField[][] celdasSudoku;
 
-    private static final String ESTILO_NORMAL  = "-fx-border-color: #2c3e50; -fx-border-width: 2; -fx-background-color: white; -fx-font-size: 20; -fx-font-weight: bold;";
-    private static final String ESTILO_ERROR   = "-fx-border-color: #e74c3c; -fx-border-width: 3; -fx-background-color: #ffebee; -fx-font-size: 16; -fx-font-weight: bold;";
+    private static final String ESTILO_NORMAL = "-fx-border-color: #2c3e50; -fx-border-width: 2; -fx-background-color: white; -fx-font-size: 20; -fx-font-weight: bold;";
+    private static final String ESTILO_ERROR = "-fx-border-color: #e74c3c; -fx-border-width: 3; -fx-background-color: #ffebee; -fx-font-size: 16; -fx-font-weight: bold;";
     private static final String ESTILO_INICIAL = "-fx-border-color: #2c3e50; -fx-border-width: 2; -fx-background-color: #e0e0e0; -fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #34495e;";
-    private static final String ESTILO_PISTA   = "-fx-border-color: #f39c12; -fx-border-width: 3; -fx-background-color: #fef9e7; -fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #f39c12;";
+    private static final String ESTILO_PISTA = "-fx-border-color: #f39c12; -fx-border-width: 3; -fx-background-color: #fef9e7; -fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #f39c12;";
 
-    @FXML private TextField celda00,celda01,celda02,celda03,celda04,celda05;
-    @FXML private TextField celda10,celda11,celda12,celda13,celda14,celda15;
-    @FXML private TextField celda20,celda21,celda22,celda23,celda24,celda25;
-    @FXML private TextField celda30,celda31,celda32,celda33,celda34,celda35;
-    @FXML private TextField celda40,celda41,celda42,celda43,celda44,celda45;
-    @FXML private TextField celda50,celda51,celda52,celda53,celda54,celda55;
+    @FXML
+    private TextField celda00, celda01, celda02, celda03, celda04, celda05;
+    @FXML
+    private TextField celda10, celda11, celda12, celda13, celda14, celda15;
+    @FXML
+    private TextField celda20, celda21, celda22, celda23, celda24, celda25;
+    @FXML
+    private TextField celda30, celda31, celda32, celda33, celda34, celda35;
+    @FXML
+    private TextField celda40, celda41, celda42, celda43, celda44, celda45;
+    @FXML
+    private TextField celda50, celda51, celda52, celda53, celda54, celda55;
 
     @FXML
     public void initialize() {
@@ -139,5 +145,43 @@ public class SudokuController {
             }
         }
     }
+
+    private String obtenerEstiloCelda(int fila, int columna) {
+        if (validadorSudoku.tieneError(fila, columna)) {
+            return ESTILO_ERROR;
+        } else if (generadorSudoku.esCeldaInicial(fila, columna)) {
+            return ESTILO_INICIAL;
+        } else {
+            return ESTILO_NORMAL;
+        }
+    }
+
+    private void iniciarNuevoJuego() {
+        generadorSudoku.iniciarNuevoJuego(tableroSudoku);
+        actualizarInterfazUsuario();
+        actualizarEstilosCeldas();
+        actualizarEstadoBotonPista();
+    }
+
+    private void actualizarInterfazUsuario() {
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 6; columna++) {
+                int valorActual = tableroSudoku.getNumero(fila, columna);
+                TextField celdaActual = celdasSudoku[fila][columna];
+
+                if (valorActual == 0) {
+                    celdaActual.setText("");
+                } else {
+                    String textoNumero = String.valueOf(valorActual);
+                    celdaActual.setText(textoNumero);
+                }
+
+                boolean esCeldaInicial = generadorSudoku.esCeldaInicial(fila, columna);
+                celdaActual.setEditable(!esCeldaInicial);
+            }
+        }
+    }
+
+
 
 }
