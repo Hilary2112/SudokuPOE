@@ -95,5 +95,32 @@ public class GeneradorSudokuModelo {
         return celdaAOcultar;
     }
 
+    private int[] generarNumerosAleatorios(){
+        int[] numeros = {1, 2, 3, 4, 5, 6};
+
+        for(int indiceActual = 0; indiceActual < numeros.length; indiceActual++){
+            int posicionAleatoria = random.nextInt(numeros.length);
+
+            int numeroPosicionActual = numeros[indiceActual];
+            numeros[indiceActual] = numeros[posicionAleatoria];
+            numeros[posicionAleatoria] = numeroPosicionActual;
+        }
+
+        return numeros;
+    }
+
+    public boolean esCeldaInicial(int fila, int columna){
+        return celdasIniciales[fila][columna];
+    }
+
+    private void reiniciarCeldasIniciales(){
+        for(int i = 0; i < matrizTamano; i++){
+            for(int j = 0; j < matrizTamano; j++){
+                celdasIniciales[i][j] = false;
+            }
+        }
+    }
+
+
 
 }
