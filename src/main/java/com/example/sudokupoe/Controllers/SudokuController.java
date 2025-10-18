@@ -78,4 +78,24 @@ public class SudokuController {
 
     }
 
+    private void configurarEventosCeldas() {
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 6; columna++) {
+                TextField celdaActual = celdasSudoku[fila][columna];
+                configurarEventosParaCelda(celdaActual, fila, columna);
+            }
+        }
+    }
+
+    private void configurarEventosParaCelda(TextField celda, int fila, int columna) {
+        celda.setOnMouseClicked(evento -> {
+            if (!generadorSudoku.esCeldaInicial(fila, columna)) {
+                mouseHandler.clickEnTextField(evento, celda);
+            }
+        });
+
+        celda.setOnKeyReleased(evento -> manejarEntradaTeclado(celda, fila, columna));
+    }
+
+
 }
