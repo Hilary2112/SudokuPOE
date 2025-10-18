@@ -52,4 +52,23 @@ public class ValidadorSudokuModelo {
         }
         return true;
     }
- }
+
+    public boolean tableroCompletamenteValido(int[][] tablero) {
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                int numero = tablero[fila][columna];
+                if (numero != 0) {
+                    tablero[fila][columna] = 0;
+                    boolean valido = verficarSiElMovimientoEsValido(tablero, fila, columna, numero);
+                    tablero[fila][columna] = numero;
+                    if (!valido) return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+
+
+}
