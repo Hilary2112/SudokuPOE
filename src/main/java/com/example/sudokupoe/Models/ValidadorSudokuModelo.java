@@ -82,6 +82,44 @@ public class ValidadorSudokuModelo {
         }
     }
 
+    public boolean tieneError(int fila, int columna) {
+        return errores[fila][columna];
+    }
+
+    public boolean esJuegoCompletado(int[][] tablero) {
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                if (tablero[fila][columna] == 0) {
+                    return false;
+                }
+            }
+        }
+        return tableroCompletamenteValido(tablero);
+    }
+
+    public void validarYMarcarErrores(int[][] tablero) {
+        limpiarErrores();
+
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                int numero = tablero[fila][columna];
+                if (numero != 0) {
+                    tablero[fila][columna] = 0;
+                    boolean valido = verficarSiElMovimientoEsValido(tablero, fila, columna, numero);
+                    tablero[fila][columna] = numero;
+
+                    if (!valido) {
+                        errores[fila][columna] = true;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
 
 
 }
