@@ -5,6 +5,11 @@ public class ValidadorSudokuModelo {
     private static final int matrizTamano= 6;
     private static final int altoPorBloque = 2;
     private static final int anchoPorBloque = 3;
+    private boolean[][] errores;
+
+    public ValidadorSudokuModelo(){
+        errores = new boolean[matrizTamano][matrizTamano];
+    }
 
     public boolean verficarSiElMovimientoEsValido(int[][] tablero,int fila, int columna, int numero){
         if (!verificarNumeroEnFila(tablero,fila,numero)) {
@@ -68,6 +73,14 @@ public class ValidadorSudokuModelo {
         return true;
     }
 
+
+    private void limpiarErrores(){
+        for(int i = 0; i < matrizTamano; i++){
+            for(int j = 0; j < matrizTamano; j++){
+                errores[i][j] = false;
+            }
+        }
+    }
 
 
 
