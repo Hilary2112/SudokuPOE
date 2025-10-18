@@ -3,6 +3,7 @@ package com.example.sudokupoe.Controllers;
 import com.example.sudokupoe.Models.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -71,17 +72,71 @@ public class SudokuController {
 
     @FXML
     void OnActionBotonNuevoJuego(ActionEvent event) {
-
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
+        confirm.setTitle("Nuevo Juego");
+        confirm.setHeaderText("¿Deseas iniciar un nuevo Sudoku?");
+        confirm.setContentText("Esto reiniciará el tablero actual.");
+        confirm.showAndWait().ifPresent(response -> iniciarNuevoJuego());
     }
 
     @FXML
     void OnActionBotonPista(ActionEvent event) {
+        boolean puedeDarPista = pistaSudoku.sePuedeDarPista(tableroSudoku.getTablero());
+        if (!puedeDarPista) {
+            alertas.alertBoxPista("Sin sugerencias", "Tu puedes!!");
+            return;
+        }
 
+        int[] pista = pistaSudoku.obtenerPista(tableroSudoku.getTablero());
+        if (pista[0] == -1) {
+            alertas.alertBoxPista("Sin sugerencias", "No se pudo encontrar una sugerencia válida en este momento.");
+            return;
+        }
+
+        int fila = pista[0];
+        int columna = pista[1];
+        int numero = pista[2];
+
+        tableroSudoku.colocarNumeroEnLaCelda(fila, columna, numero);
+
+        TextField celdaPista = celdasSudoku[fila][columna];
+        celdaPista.setText(String.valueOf(numero));
+        celdaPista.setEditable(false);
+        celdaPista.setStyle(ESTILO_PISTA);
+
+        validadorSudoku.validarYMarcarErrores(tableroSudoku.getTablero());
+        actualizarEstadoBotonPista();
     }
 
     @FXML
     void OnActionBotonVerificar(ActionEvent event) {
+        validadorSudoku.validarYMarcarErrores(tableroSudoku.getTablero());
+        actualizarEstilosCeldas();
 
+        boolean tieneErrores = false;
+        int celdasLlenas = 0;
+
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 6; columna++) {
+                if (tableroSudoku.getNumero(fila, columna) != 0) {
+                    celdasLlenas++;
+                }
+                if (validadorSudoku.tieneError(fila, columna)) {
+                    tieneErrores = true;
+                }
+            }
+        }
+
+        if (tieneErrores) {
+            alertas.alertBoxError("Errores encontrados", "Hay números duplicados en filas, columnas o bloques. Revisa las celdas resaltadas.");
+        } else if (celdasLlenas == 36) {
+            mostrarDialogoJuegoCompletado();
+        } else {
+            int celdasVacias = 36 - celdasLlenas;
+            alertas.alertBoxJuegoCompleto("Validación correcta",
+                    "ESPERA!! Vas por buen camino pero... \n\n" +
+                            "Te faltan " + celdasVacias + " celdas por completar.");
+        }
     }
 
     private void configurarEventosCeldas() {
@@ -182,6 +237,22 @@ public class SudokuController {
         }
     }
 
+    private void actualizarEstadoBotonPista() {
+        boolean puedeDarPista = pistaSudoku.sePuedeDarPista(tableroSudoku.getTablero());
+        BotonPista.setDisable(!puedeDarPista);
+    }
+
+    private void mostrarDialogoJuegoCompletado() {
+        alertas.alertBoxJuegoCompleto("¡Felicitaciones!", "¡Has completado el Sudoku!\n\nExcelente trabajo.");
+
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 6; columna++) {
+                celdasSudoku[fila][columna].setEditable(false);
+            }
+        }
+
+        BotonPista.setDisable(true);
+    }
 
 
 }
