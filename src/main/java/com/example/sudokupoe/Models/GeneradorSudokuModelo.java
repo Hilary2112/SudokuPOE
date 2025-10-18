@@ -121,6 +121,19 @@ public class GeneradorSudokuModelo {
         }
     }
 
+    public void iniciarNuevoJuego(TableroSudokuModelo tableroModelo){
+        tableroModelo.setTablero(generarTablero());
+    }
 
+    public int[] obtenerPistaDesdeSolucion(int[][] tableroActual) {
+        for (int fila = 0; fila < matrizTamano; fila++) {
+            for (int columna = 0; columna < matrizTamano; columna++) {
+                if (tableroActual[fila][columna] == 0 && !celdasIniciales[fila][columna]) {
+                    return new int[]{fila, columna, solucionCompleta[fila][columna]};
+                }
+            }
+        }
+        return null;
+    }
 
 }
