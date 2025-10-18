@@ -97,5 +97,47 @@ public class SudokuController {
         celda.setOnKeyReleased(evento -> manejarEntradaTeclado(celda, fila, columna));
     }
 
+    private void manejarEntradaTeclado(TextField celda, int fila, int columna) {
+        String textoIngresado = celda.getText();
+
+        if (textoIngresado.length() > 1) {
+            textoIngresado = textoIngresado.substring(textoIngresado.length() - 1);
+            celda.setText(textoIngresado);
+        }
+
+        if (!textoIngresado.matches("[1-6]*")) {
+            celda.setText("");
+            return;
+        }
+
+        if (generadorSudoku.esCeldaInicial(fila, columna)) {
+            celda.setText(String.valueOf(tableroSudoku.getNumero(fila, columna)));
+            return;
+        }
+
+        int valor = textoIngresado.isEmpty() ? 0 : Integer.parseInt(textoIngresado);
+        actualizarModeloTablero(fila, columna, valor);
+
+        validadorSudoku.validarYMarcarErrores(tableroSudoku.getTablero());
+        actualizarEstilosCeldas();
+    }
+
+    private void actualizarModeloTablero(int fila, int columna, int valor) {
+        if (valor == 0) {
+            tableroSudoku.eliminarNumeroEnLaCelda(fila, columna);
+        } else {
+            tableroSudoku.colocarNumeroEnLaCelda(fila, columna, valor);
+        }
+    }
+
+    private void actualizarEstilosCeldas() {
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 6; columna++) {
+                TextField celda = celdasSudoku[fila][columna];
+                String estilo = obtenerEstiloCelda(fila, columna);
+                celda.setStyle(estilo);
+            }
+        }
+    }
 
 }
