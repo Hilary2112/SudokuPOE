@@ -1,5 +1,7 @@
 package com.example.sudokupoe.Models;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class GeneradorSudokuModelo {
@@ -57,5 +59,41 @@ public class GeneradorSudokuModelo {
         }
         return true;
     }
+
+    private int[][] ocultarCeldasDeTableroCompletado(int[][] tableroCompleto) {
+        int[][] celdaAOcultar = new int[matrizTamano][matrizTamano];
+
+        for (int i = 0; i < matrizTamano; i++) {
+            for (int j = 0; j < matrizTamano; j++) {
+                celdaAOcultar[i][j] = tableroCompleto[i][j];
+            }
+        }
+
+        for(int bloqueFila = 0; bloqueFila < matrizTamano; bloqueFila += altoPorBloque){
+            for(int bloqueCol = 0; bloqueCol < matrizTamano; bloqueCol += anchoPorBloque){
+
+                ArrayList<int[]> posiciones = new ArrayList<>();
+                for(int i = bloqueFila; i < bloqueFila + altoPorBloque; i++){
+                    for(int j = bloqueCol; j < bloqueCol + anchoPorBloque; j++){
+                        posiciones.add(new int[]{i, j});
+                    }
+                }
+
+                Collections.shuffle(posiciones);
+
+                for(int posicion = 0; posicion < posiciones.size(); posicion++){
+                    int[] celda = posiciones.get(posicion);
+                    if(posicion < 2){
+                        celdasIniciales[celda[0]][celda[1]] = true;
+                    } else {
+                        celdaAOcultar[celda[0]][celda[1]] = 0;
+                    }
+                }
+            }
+        }
+
+        return celdaAOcultar;
+    }
+
 
 }
